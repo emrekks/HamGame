@@ -1,0 +1,13 @@
+﻿# Default ignored files
+/shelf/
+/workspace.xml
+# Rider ignored files
+/projectSettingsUpdater.xml
+/contentModel.xml
+/modules.xml
+/.idea.GEVR.iml
+# Datasource local storage ignored files
+/../../../../../../../../../:\Users\user\Documents\Unity Projects\GEVR\.idea\.idea.GEVR\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/

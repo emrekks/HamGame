@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Money1
+  - Money5
+  - Money10
+  - People
+  - PeopleRef
+  - PeopleRef2
+  - PurpleTicket
+  - GreenTicket
+  - GreenTicketButon
+  - PurpleTicketButton
+  - Hand
+  - CashBox
+  - PeopleTalkText
+  - projectile
+  - FxTemporaire
+  - PeopleBox
+  - ref1
+  - ref
+  - AltEkmek
+  - Domates
+  - Et
+  - Peynir
+  - UstEkmek
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Money
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
