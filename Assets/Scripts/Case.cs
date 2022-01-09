@@ -31,7 +31,7 @@ public class Case : MonoBehaviour
         moneyText.text = MoneyAmount + "$";
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.layer == 8)
         {
@@ -47,7 +47,6 @@ public class Case : MonoBehaviour
             {
                 MoneyAmount += 10;
             }
-            ClockUI.instance.moneyInCashSound.Play();
             Destroy(collision.gameObject);
         }
     }

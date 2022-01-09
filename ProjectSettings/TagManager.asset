@@ -27,6 +27,7 @@ TagManager:
   - Et
   - Peynir
   - UstEkmek
+  - moneyRef
   layers:
   - Default
   - TransparentFX

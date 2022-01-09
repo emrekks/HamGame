@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2472399735942779188}
   m_Layer: 0
   m_Name: Peynir
-  m_TagString: Untagged
+  m_TagString: Peynir
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 4104382070326286184}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.118, y: 3.346, z: 1.731}
-  m_LocalScale: {x: 0.25766587, y: 0.02751372, z: 0.23974298}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4104382070326286184}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -862450524687487883, guid: 4c8d844bf458a104b968279467972ef0, type: 3}
 --- !u!23 &8557561597505132131
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0a038f8896840a64c9a02f5fa9d3015b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -95,8 +95,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.17149311, y: 0.024711935, z: 0.17149374}
+  m_Center: {x: 0.000000011175871, y: -0.0044483794, z: 0}
 --- !u!54 &2472399735942779149
 Rigidbody:
   m_ObjectHideFlags: 0

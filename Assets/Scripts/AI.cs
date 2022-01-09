@@ -33,12 +33,13 @@ public class AI : MonoBehaviour
     public bool moneyGave = true;
     private TextMeshPro panelText;
     private bool losemoney = false;
-
+    public GameObject moneyAreaRef;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        moneyAreaRef = GameObject.FindGameObjectWithTag("moneyRef");
         _standReferance = GameObject.FindGameObjectWithTag("ref");
         ref2 = GameObject.FindGameObjectWithTag("ref1");
         anim = GetComponent<Animator>();
@@ -124,10 +125,93 @@ public class AI : MonoBehaviour
         }
     }
 
-        void PeopleInLine()
+       private void PeopleInLine()
+       {
+        //if (rndBurgerLvl1 == 0)
+        //{
+        //    if (OrderScripts.instance.hamburger1)
+        //    {
+
+        //    } 
+        //}
+
+        //if (rndBurgerLvl1 == 1)
+        //{
+        //    if (OrderScripts.instance.hamburger2)
+        //    {
+
+        //    }
+        //}
+
+        if (rndBurgerLvl1 == 0 && moneyGave)
         {
-         
+            //ClockUI.instance.talkSound1.Play();
+            Instantiate(money10, moneyAreaRef.transform.position, Quaternion.identity);
+
+
+            panelText.text = "Customer Wants Burger0";
+            //ClockUI.instance.writeSound.Play();
+            //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+            moneyGave = false;
+
+            if (!moneyGave)
+            {
+                return;
+            }
         }
+
+        if (rndBurgerLvl1 == 1 && moneyGave)
+        {
+            //ClockUI.instance.talkSound2.Play();
+            Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
+
+
+            moneyGave = false;
+            if (!moneyGave)
+            {
+                panelText.text = "Customer Wants Burger1";
+                //ClockUI.instance.writeSound.Play();
+                //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+                return;
+            }
+        }
+
+        if (OrderScripts.instance.hamburger1)
+        {
+            if (rndBurgerLvl1 == 0 && !losemoney)
+            {
+                Case.instance.MoneyAmount -= 5;
+                losemoney = true;
+                ClockUI.instance.wrongTicketSound.Play();
+            }
+
+            else if (rndBurgerLvl1 == 1)
+            {
+                canGo = true;
+                OrderScripts.instance.hamburger1 = false;
+                ClockUI.instance.trueTicketSound.Play();
+            }
+        }
+
+        if (OrderScripts.instance.hamburger2)
+        {
+            if (rndBurgerLvl1 == 0)
+            {
+                canGo = true;
+                OrderScripts.instance.hamburger2 = false;
+                ClockUI.instance.trueTicketSound.Play();
+            }
+
+            else if (rndBurgerLvl1 == 1 && !losemoney)
+            {
+                Case.instance.MoneyAmount -= 5;
+                losemoney = true;
+                ClockUI.instance.wrongTicketSound.Play();
+            }
+        }
+
+    }
+
 
         private void OnDrawGizmosSelected()
         {

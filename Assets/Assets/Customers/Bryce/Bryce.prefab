@@ -1293,11 +1293,12 @@ MonoBehaviour:
   frontFull: 0
   inLine: 0
   radius: 2
-  money1: {fileID: 0}
-  money5: {fileID: 0}
-  money10: {fileID: 0}
-  rndTicket: 0
+  money1: {fileID: 346139452888283514, guid: 19ad9b7b858ba4e44a020efcbe94b4d1, type: 3}
+  money5: {fileID: 6093288775044088518, guid: 8ff0a19bc2717f5469f77fb222caffad, type: 3}
+  money10: {fileID: 5618712259420605289, guid: f7407775df1ebfc4e9dd63e8cbd6fd2f, type: 3}
+  rndBurgerLvl1: 0
   moneyGave: 1
+  moneyAreaRef: {fileID: 0}
 --- !u!136 &5022981340266232534
 CapsuleCollider:
   m_ObjectHideFlags: 0

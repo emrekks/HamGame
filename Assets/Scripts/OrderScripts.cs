@@ -4,6 +4,17 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 public class OrderScripts : MonoBehaviour
 {
+    #region Singleton
+
+
+    public static OrderScripts instance;
+    public void Awake()
+    {
+        instance = this;
+    }
+
+    #endregion
+
     public GameObject AltEkmek;
     public GameObject UstEkmek;
     public GameObject Domates;
@@ -11,6 +22,15 @@ public class OrderScripts : MonoBehaviour
     public GameObject Peynir;
     public List<GameObject> burgerMaterial = new List<GameObject>();
     public Transform Referans;
+    private GameObject makeChild;
+    public int sizeOfList;
+
+
+    //order
+    public bool hamburger1 = false;
+    public bool hamburger2 = false;
+
+    //materials
     public bool altekmek = false;
     public bool üstekmek = false;
     public bool peynir = false;
@@ -19,61 +39,55 @@ public class OrderScripts : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        sizeOfList = burgerMaterial.Count;
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("AltEkmek") && !altekmek)
         {
-            burgerMaterial.Add(other.gameObject);
-            other.gameObject.transform.position = Referans.position;
+            Destroy(other.gameObject);
+            makeChild = Instantiate(AltEkmek, Referans.position + new Vector3(0, 0, 0), Quaternion.identity);
             altekmek = true;
-            Destroy(other.GetComponent<Throwable>());
-            Destroy(other.GetComponent<Interactable>());
-            Destroy(other.GetComponent<VelocityEstimator>());
+            burgerMaterial.Add(makeChild);
         }
-        if (altekmek && other.gameObject.CompareTag("Domates") && !üstekmek && !domates)
+
+        if (other.gameObject.CompareTag("Domates") && !üstekmek && !domates)
         {
-            burgerMaterial.Add(other.gameObject);
-            other.gameObject.transform.position = Referans.position + new Vector3(0, 0.2f, 0);
+            Destroy(other.gameObject);
+            makeChild = Instantiate(Domates, Referans.position + new Vector3(0, 0.15f, 0), Quaternion.identity);
             domates = true;
-            Destroy(other.GetComponent<Throwable>());
-            Destroy(other.GetComponent<Interactable>());
-            Destroy(other.GetComponent<VelocityEstimator>());
+            burgerMaterial.Add(makeChild);
         }
-        if (altekmek && other.gameObject.CompareTag("Peynir") && !üstekmek && !peynir)
+
+        if (other.gameObject.CompareTag("Peynir") && !üstekmek && !peynir)
         {
-            burgerMaterial.Add(other.gameObject);
-            other.gameObject.transform.position = Referans.position + new Vector3(0, 0.4f, 0);
+            Destroy(other.gameObject);
+            makeChild = Instantiate(Peynir, Referans.position + new Vector3(0, 0.15f, 0), Quaternion.identity);
             peynir = true;
-            Destroy(other.GetComponent<Throwable>());
-            Destroy(other.GetComponent<Interactable>());
-            Destroy(other.GetComponent<VelocityEstimator>());
+            burgerMaterial.Add(makeChild);
         }
-        if (altekmek && other.gameObject.CompareTag("Et") && !üstekmek && !et)
+
+        if (other.gameObject.CompareTag("Et") && !üstekmek && !et)
         {
-            burgerMaterial.Add(other.gameObject);
-            other.gameObject.transform.position = Referans.position + new Vector3(0, 0.6f, 0);
+            Destroy(other.gameObject);
+            makeChild = Instantiate(Et, Referans.position + new Vector3(0, 0.15f, 0), Quaternion.identity);
             et = true;
-            Destroy(other.GetComponent<Throwable>());
-            Destroy(other.GetComponent<Interactable>());
-            Destroy(other.GetComponent<VelocityEstimator>());
+            burgerMaterial.Add(makeChild);
         }
-        if (altekmek && other.gameObject.CompareTag("UstEkmek") && !üstekmek)
+
+        if (other.gameObject.CompareTag("UstEkmek") && !üstekmek)
         {
-            burgerMaterial.Add(other.gameObject);
-            other.gameObject.transform.position = Referans.position + new Vector3(0, 0.8f, 0);
+            Destroy(other.gameObject);
+            makeChild = Instantiate(UstEkmek, Referans.position + new Vector3(0, 0.15f, 0), Quaternion.identity);
             üstekmek = true;
-            Destroy(other.GetComponent<Throwable>());
-            Destroy(other.GetComponent<Interactable>());
-            Destroy(other.GetComponent<VelocityEstimator>());
+            burgerMaterial.Add(makeChild);
         }
 
     }

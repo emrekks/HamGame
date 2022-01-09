@@ -71,7 +71,7 @@ public class ClockUI : MonoBehaviour
             }
         }
         
-        moneyPanelText.text = "Money: " + Case.instance.MoneyAmount + " / " + totalMoneyCount;
+        //moneyPanelText.text = "Money: " + Case.instance.MoneyAmount + " / " + totalMoneyCount;
 
         if (time > 23)
         {
