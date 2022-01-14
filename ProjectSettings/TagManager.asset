@@ -28,6 +28,11 @@ TagManager:
   - Peynir
   - UstEkmek
   - moneyRef
+  - BBQ
+  - AzPismisEt
+  - CokPismisEt
+  - YanmisEt
+  - OrtaPismisEt
   layers:
   - Default
   - TransparentFX
