@@ -10,6 +10,18 @@ using Random = UnityEngine.Random;
 public class AI : MonoBehaviour
 {
 
+    #region Singleton
+
+
+    public static AI instance;
+    public void Awake()
+    {
+        instance = this;
+    }
+
+    #endregion
+
+
     public GameObject _standReferance;
     public GameObject ref2;
     //public GameObject referance;
@@ -32,7 +44,7 @@ public class AI : MonoBehaviour
 
     public bool moneyGave = true;
     private TextMeshPro panelText;
-    private bool losemoney = false;
+    public bool losemoney = false;
     public GameObject moneyAreaRef;
 
 
@@ -58,15 +70,19 @@ public class AI : MonoBehaviour
         anim.SetBool("front", frontFull);
 
 
+        if (!frontFull)
+        {
+            if (!canGo)
+            {
+                _agent.SetDestination(_standReferance.transform.position);
+            }
+            else
+            {
+                _agent.SetDestination(ref2.transform.position);
+                losemoney = false;
+            }
+        }
 
-        if (!canGo)
-        {
-            _agent.SetDestination(_standReferance.transform.position); 
-        }
-        else
-        {
-            _agent.SetDestination(ref2.transform.position);
-        }
         
 
         if (inLine)
@@ -127,90 +143,84 @@ public class AI : MonoBehaviour
 
        private void PeopleInLine()
        {
-        //if (rndBurgerLvl1 == 0)
-        //{
-        //    if (OrderScripts.instance.hamburger1)
-        //    {
-
-        //    } 
-        //}
-
-        //if (rndBurgerLvl1 == 1)
-        //{
-        //    if (OrderScripts.instance.hamburger2)
-        //    {
-
-        //    }
-        //}
-
-        if (rndBurgerLvl1 == 0 && moneyGave)
-        {
-            //ClockUI.instance.talkSound1.Play();
-            Instantiate(money10, moneyAreaRef.transform.position, Quaternion.identity);
-
-
-            panelText.text = "Customer Wants Burger0";
-            //ClockUI.instance.writeSound.Play();
-            //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
-            moneyGave = false;
-
-            if (!moneyGave)
-            {
-                return;
-            }
-        }
-
-        if (rndBurgerLvl1 == 1 && moneyGave)
-        {
-            //ClockUI.instance.talkSound2.Play();
-            Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
-
-
-            moneyGave = false;
-            if (!moneyGave)
-            {
-                panelText.text = "Customer Wants Burger1";
-                //ClockUI.instance.writeSound.Play();
-                //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
-                return;
-            }
-        }
-
-        if (OrderScripts.instance.hamburger1)
-        {
-            if (rndBurgerLvl1 == 0 && !losemoney)
-            {
-                Case.instance.MoneyAmount -= 5;
-                losemoney = true;
-                ClockUI.instance.wrongTicketSound.Play();
-            }
-
-            else if (rndBurgerLvl1 == 1)
-            {
-                canGo = true;
-                OrderScripts.instance.hamburger1 = false;
-                ClockUI.instance.trueTicketSound.Play();
-            }
-        }
-
-        if (OrderScripts.instance.hamburger2)
-        {
             if (rndBurgerLvl1 == 0)
             {
-                canGo = true;
-                OrderScripts.instance.hamburger2 = false;
-                ClockUI.instance.trueTicketSound.Play();
+                panelText.text = "Customer Wants hamburger2";
             }
 
-            else if (rndBurgerLvl1 == 1 && !losemoney)
+            if (rndBurgerLvl1 == 1)
             {
-                Case.instance.MoneyAmount -= 5;
-                losemoney = true;
-                ClockUI.instance.wrongTicketSound.Play();
+                panelText.text = "Customer Wants hamburger1";
             }
-        }
 
-    }
+            if (rndBurgerLvl1 == 0 && moneyGave && OrderScripts.instance.hamburger2)
+            {
+                //ClockUI.instance.talkSound1.Play();
+                Instantiate(money10, moneyAreaRef.transform.position, Quaternion.identity);
+
+
+                panelText.text = "Customer Wants Burger0";
+                //ClockUI.instance.writeSound.Play();
+                //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+                moneyGave = false;
+
+                if (!moneyGave)
+                {
+                    return;
+                }
+            }
+
+            if (rndBurgerLvl1 == 1 && moneyGave && OrderScripts.instance.hamburger1)
+            {
+                //ClockUI.instance.talkSound2.Play();
+                Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
+
+                panelText.text = "Customer Wants Burger1";
+                moneyGave = false;
+
+                if (!moneyGave)
+                {
+                    //ClockUI.instance.writeSound.Play();
+                    //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+                    return;
+                }
+            }
+
+            if (OrderScripts.instance.hamburger1)
+            {
+                if (rndBurgerLvl1 == 0 && !losemoney)
+                {
+                    Case.instance.MoneyAmount -= 5;
+                    losemoney = true;
+                    ClockUI.instance.wrongTicketSound.Play();
+                }
+
+                else if (rndBurgerLvl1 == 1)
+                {
+                    canGo = true;
+                    OrderScripts.instance.hamburger1 = false;
+                    ClockUI.instance.trueTicketSound.Play();
+                }
+            }
+
+            if (OrderScripts.instance.hamburger2)
+            {
+                if (rndBurgerLvl1 == 0)
+                {
+                    canGo = true;
+                    OrderScripts.instance.hamburger2 = false;
+                    ClockUI.instance.trueTicketSound.Play();
+                }
+
+                else if (rndBurgerLvl1 == 1 && !losemoney)
+                {
+                    Case.instance.MoneyAmount -= 5;
+                    losemoney = true;
+                    ClockUI.instance.wrongTicketSound.Play();
+                }
+            }
+
+       }
 
 
         private void OnDrawGizmosSelected()
