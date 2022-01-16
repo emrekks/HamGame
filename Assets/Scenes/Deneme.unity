@@ -1504,18 +1504,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4903984694516423781, guid: 5d9384944e13529419152b79878ab3b5,
         type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.49659
+      objectReference: {fileID: 0}
+    - target: {fileID: 4903984694516423781, guid: 5d9384944e13529419152b79878ab3b5,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.671279
+      value: 7.82
       objectReference: {fileID: 0}
     - target: {fileID: 4903984694516423781, guid: 5d9384944e13529419152b79878ab3b5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2704012
+      value: 3.243
       objectReference: {fileID: 0}
     - target: {fileID: 4903984694516423781, guid: 5d9384944e13529419152b79878ab3b5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.388
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 4903984694516423781, guid: 5d9384944e13529419152b79878ab3b5,
         type: 3}
@@ -3313,7 +3318,7 @@ PrefabInstance:
     - target: {fileID: 8360609068628648672, guid: 59722a0151c826049bb87add6aae82c1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.931239
+      value: 10.144
       objectReference: {fileID: 0}
     - target: {fileID: 8360609068628648672, guid: 59722a0151c826049bb87add6aae82c1,
         type: 3}
@@ -3555,7 +3560,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1665764236}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c383ce9997df2a946a2b5e8bcaa1afd7, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c8225c36f6554149abdcbad0700ce04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1667327880
@@ -3569,6 +3574,46 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059993114642647119, guid: 6fff0f6cd41474541bde29e7f9d2fe3d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059993114642647119, guid: 6fff0f6cd41474541bde29e7f9d2fe3d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059993114642647119, guid: 6fff0f6cd41474541bde29e7f9d2fe3d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059993114642647119, guid: 6fff0f6cd41474541bde29e7f9d2fe3d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059993114642647119, guid: 6fff0f6cd41474541bde29e7f9d2fe3d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059993114642647119, guid: 6fff0f6cd41474541bde29e7f9d2fe3d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -16.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059993114642647119, guid: 6fff0f6cd41474541bde29e7f9d2fe3d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5059993114642647119, guid: 6fff0f6cd41474541bde29e7f9d2fe3d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 5286815312885758503, guid: 6fff0f6cd41474541bde29e7f9d2fe3d,
         type: 3}
@@ -4180,6 +4225,8 @@ MonoBehaviour:
   sizeOfList: 0
   hamburger0: 0
   hamburger1: 0
+  hamburger2: 0
+  hamburger3: 0
   altekmek: 0
   "\xFCstekmek": 0
   peynir: 0
@@ -4188,6 +4235,7 @@ MonoBehaviour:
   azpismiset: 0
   ortapismiset: 0
   cokpismiset: 0
+  yanmiset: 0
 --- !u!65 &2061029553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4627,7 +4675,7 @@ PrefabInstance:
     - target: {fileID: 6817654118055632526, guid: 55518255d72b5e24e851cb5bc41f0c8b,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.048017293
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6817654118055632526, guid: 55518255d72b5e24e851cb5bc41f0c8b,
         type: 3}

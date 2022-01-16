@@ -2,17 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClearBurgerMaterialsButton : MonoBehaviour
+namespace Valve.VR.InteractionSystem.Sample
 {
-    // Start is called before the first frame update
-    void Start()
+    public class ClearBurgerMaterialsButton : MonoBehaviour
     {
-        
-    }
+        public void OnButtonDown()
+        {
+            for (int i = OrderScripts.instance.sizeOfList; i > 0; i--)
+            {
+                foreach (var x in OrderScripts.instance.burgerMaterial)
+                {
+                    Destroy(x);
+                }
+                OrderScripts.instance.burgerMaterial.Clear();
+            }
+            OrderScripts.instance.altekmek = false;
+            OrderScripts.instance.üstekmek = false;
+            OrderScripts.instance.peynir = false;
+            OrderScripts.instance.domates = false;
+            OrderScripts.instance.azpismiset = false;
+            OrderScripts.instance.cokpismiset = false;
+            OrderScripts.instance.et = false;
+            OrderScripts.instance.ortapismiset = false;
+            OrderScripts.instance.yanmiset = false;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void OnButtonUp()
+        {
+            ColorSelf(Color.white);
+        }
+
+        private void ColorSelf(Color newColor)
+        {
+            Renderer[] renderers = this.GetComponentsInChildren<Renderer>();
+            for (int rendererIndex = 0; rendererIndex < renderers.Length; rendererIndex++)
+            {
+                renderers[rendererIndex].material.color = newColor;
+            }
+        }
     }
 }

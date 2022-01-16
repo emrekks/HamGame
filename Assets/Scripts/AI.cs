@@ -40,6 +40,7 @@ public class AI : MonoBehaviour
 
     public int rndBurgerLvl1;
 
+
     private bool canGo = false;
 
     public bool moneyGave = true;
@@ -58,7 +59,18 @@ public class AI : MonoBehaviour
         peopleSpeed = 2f;
         _agent = GetComponent<NavMeshAgent>();
         _agent.speed = peopleSpeed;
-        rndBurgerLvl1 = Random.Range(0, 4);
+        if(ClockUI.instance.dayCount == 1)
+        {
+            rndBurgerLvl1 = Random.Range(0, 4);
+        }
+        if (ClockUI.instance.dayCount == 2)
+        {
+            rndBurgerLvl1 = Random.Range(4, 8);
+        }
+        if (ClockUI.instance.dayCount == 3)
+        {
+            rndBurgerLvl1 = Random.Range(8, 12);
+        }
         panelText = GameObject.FindGameObjectWithTag("PeopleTalkText").GetComponent<TextMeshPro>();
     }
 
