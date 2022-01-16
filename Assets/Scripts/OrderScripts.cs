@@ -34,6 +34,15 @@ public class OrderScripts : MonoBehaviour
     public bool hamburger1 = false;
     public bool hamburger2 = false;
     public bool hamburger3 = false;
+    public bool hamburger4 = false;
+    public bool hamburger5 = false;
+    public bool hamburger6 = false;
+    public bool hamburger7 = false;
+    public bool hamburger8 = false;
+    public bool hamburger9 = false;
+    public bool hamburger10 = false;
+    public bool hamburger11 = false;
+
 
     //materials
     public bool altekmek = false;

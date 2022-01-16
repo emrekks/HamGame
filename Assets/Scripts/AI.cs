@@ -174,9 +174,44 @@ public class AI : MonoBehaviour
             {
                 panelText.text = "Orta Pismis Karisik Hamburger";
             }
+            if(rndBurgerLvl1 == 4)
+            {
+                panelText.text = "Az Pismis Karisik Hamburger";
+            }
+            if (rndBurgerLvl1 == 5)
+            {
+                panelText.text = "Az Pismis, Peynir ve Domatessiz Hamburger";
+            }
+            if (rndBurgerLvl1 == 6)
+            {
+                panelText.text = "Az Pismis, Sadece Domatesli Hamburger";
+            }
+
+            if (rndBurgerLvl1 == 7)
+            {
+                panelText.text = "Az Pismis, Sadece Peynirli Hamburger";
+            }
+            if (rndBurgerLvl1 == 8)
+            {
+                panelText.text = "Cok Pismis Karisik Hamburger";
+            }
+            if (rndBurgerLvl1 == 9)
+            {
+                panelText.text = "Cok Pismis, Peynir ve Domatessiz Hamburger";
+            }
+            if (rndBurgerLvl1 == 10)
+            {
+                panelText.text = "Cok Pismis, Sadece Domatesli Hamburger";
+            }
+
+            if (rndBurgerLvl1 == 11)
+            {
+                panelText.text = "Cok Pismis, Sadece Peynirli Hamburger";
+            }
 
 
-            if (rndBurgerLvl1 == 0 && moneyGave && OrderScripts.instance.hamburger0)
+
+        if (rndBurgerLvl1 == 0 && moneyGave && OrderScripts.instance.hamburger0)
             {
                 //ClockUI.instance.talkSound1.Play();
                 Instantiate(money10, moneyAreaRef.transform.position, Quaternion.identity);
@@ -234,6 +269,134 @@ public class AI : MonoBehaviour
             Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
             canGo = true;
             OrderScripts.instance.hamburger3 = false;
+            ClockUI.instance.trueTicketSound.Play();
+            moneyGave = false;
+
+            if (!moneyGave)
+            {
+                //ClockUI.instance.writeSound.Play();
+                //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+                return;
+            }
+        }
+        if (rndBurgerLvl1 == 4 && moneyGave && OrderScripts.instance.hamburger4)
+        {
+            //ClockUI.instance.talkSound2.Play();
+            Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
+            canGo = true;
+            OrderScripts.instance.hamburger4 = false;
+            ClockUI.instance.trueTicketSound.Play();
+            moneyGave = false;
+
+            if (!moneyGave)
+            {
+                //ClockUI.instance.writeSound.Play();
+                //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+                return;
+            }
+        }
+        if (rndBurgerLvl1 == 5 && moneyGave && OrderScripts.instance.hamburger5)
+        {
+            //ClockUI.instance.talkSound2.Play();
+            Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
+            canGo = true;
+            OrderScripts.instance.hamburger5 = false;
+            ClockUI.instance.trueTicketSound.Play();
+            moneyGave = false;
+
+            if (!moneyGave)
+            {
+                //ClockUI.instance.writeSound.Play();
+                //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+                return;
+            }
+        }
+        if (rndBurgerLvl1 == 6 && moneyGave && OrderScripts.instance.hamburger6)
+        {
+            //ClockUI.instance.talkSound2.Play();
+            Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
+            canGo = true;
+            OrderScripts.instance.hamburger6 = false;
+            ClockUI.instance.trueTicketSound.Play();
+            moneyGave = false;
+
+            if (!moneyGave)
+            {
+                //ClockUI.instance.writeSound.Play();
+                //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+                return;
+            }
+        }
+        if (rndBurgerLvl1 == 7 && moneyGave && OrderScripts.instance.hamburger7)
+        {
+            //ClockUI.instance.talkSound2.Play();
+            Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
+            canGo = true;
+            OrderScripts.instance.hamburger7 = false;
+            ClockUI.instance.trueTicketSound.Play();
+            moneyGave = false;
+
+            if (!moneyGave)
+            {
+                //ClockUI.instance.writeSound.Play();
+                //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+                return;
+            }
+        }
+        if (rndBurgerLvl1 == 8 && moneyGave && OrderScripts.instance.hamburger8)
+        {
+            //ClockUI.instance.talkSound2.Play();
+            Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
+            canGo = true;
+            OrderScripts.instance.hamburger8 = false;
+            ClockUI.instance.trueTicketSound.Play();
+            moneyGave = false;
+
+            if (!moneyGave)
+            {
+                //ClockUI.instance.writeSound.Play();
+                //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+                return;
+            }
+        }
+        if (rndBurgerLvl1 == 9 && moneyGave && OrderScripts.instance.hamburger9)
+        {
+            //ClockUI.instance.talkSound2.Play();
+            Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
+            canGo = true;
+            OrderScripts.instance.hamburger9 = false;
+            ClockUI.instance.trueTicketSound.Play();
+            moneyGave = false;
+
+            if (!moneyGave)
+            {
+                //ClockUI.instance.writeSound.Play();
+                //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+                return;
+            }
+        }
+        if (rndBurgerLvl1 == 10 && moneyGave && OrderScripts.instance.hamburger10)
+        {
+            //ClockUI.instance.talkSound2.Play();
+            Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
+            canGo = true;
+            OrderScripts.instance.hamburger10 = false;
+            ClockUI.instance.trueTicketSound.Play();
+            moneyGave = false;
+
+            if (!moneyGave)
+            {
+                //ClockUI.instance.writeSound.Play();
+                //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+                return;
+            }
+        }
+        if (rndBurgerLvl1 == 11 && moneyGave && OrderScripts.instance.hamburger11)
+        {
+            //ClockUI.instance.talkSound2.Play();
+            Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
+            canGo = true;
+            OrderScripts.instance.hamburger11 = false;
             ClockUI.instance.trueTicketSound.Play();
             moneyGave = false;
 
