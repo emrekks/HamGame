@@ -50,13 +50,14 @@ public class ClockUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        daytext.text = "Day: " + dayCount;
-        moneyPanelText.text = "Money: " + Case.instance.MoneyAmount + " / " + totalMoneyCount;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        daytext.text = "Day: " + dayCount;
+        moneyPanelText.text = "Money: " + Case.instance.MoneyAmount + " / " + totalMoneyCount;
         timer += Time.deltaTime;
 
         if (replayBool)
@@ -75,7 +76,7 @@ public class ClockUI : MonoBehaviour
 
         if (time > 23)
         {
-            time = 0;
+            time = 12;
         }
 
         if (timer >= 0.25f)
@@ -117,7 +118,7 @@ public class ClockUI : MonoBehaviour
         }
 
 
-        if (time == 11 && time2 >= 50 && !dayBool)
+        if (time == 23 && time2 >= 59 && !dayBool)
         {
             if (Case.instance.MoneyAmount >= totalMoneyCount && !dayBool)
             {
@@ -144,7 +145,7 @@ public class ClockUI : MonoBehaviour
             
         }
         
-        if (time == 12 && time2 >= 00 && !dayBool)
+        if (time == 23 && time2 >= 59 && !dayBool)
         {
             dayBool = false;
         }
