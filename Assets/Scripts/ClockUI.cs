@@ -145,7 +145,7 @@ public class ClockUI : MonoBehaviour
             
         }
         
-        if (time == 23 && time2 >= 59 && !dayBool)
+        if (time == 12 && time2 >= 00 && dayBool)
         {
             dayBool = false;
         }
