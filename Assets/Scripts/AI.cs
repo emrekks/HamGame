@@ -82,8 +82,7 @@ public class AI : MonoBehaviour
         anim.SetBool("front", frontFull);
 
 
-        if (!frontFull)
-        {
+ 
             if (!canGo)
             {
                 _agent.SetDestination(_standReferance.transform.position);
@@ -93,7 +92,7 @@ public class AI : MonoBehaviour
                 _agent.SetDestination(ref2.transform.position);
                 losemoney = false;
             }
-        }
+        
 
         
 
