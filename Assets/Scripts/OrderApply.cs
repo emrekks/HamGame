@@ -9,10 +9,11 @@ namespace Valve.VR.InteractionSystem.Sample
         public void OnButtonDown()
         {
             ColorSelf(Color.cyan);
-            if (OrderScripts.instance.altekmek && OrderScripts.instance.üstekmek && OrderScripts.instance.et && OrderScripts.instance.domates && OrderScripts.instance.burgerMaterial[0] == OrderScripts.instance.altekmek)
+            if (OrderScripts.instance.altekmek && OrderScripts.instance.üstekmek && OrderScripts.instance.ortapismiset && OrderScripts.instance.domates && OrderScripts.instance.burgerMaterial[0] == OrderScripts.instance.altekmek && !OrderScripts.instance.peynir && !OrderScripts.instance.azpismiset && !OrderScripts.instance.cokpismiset && !OrderScripts.instance.et)
             {
-                OrderScripts.instance.hamburger1 = true;
-                OrderScripts.instance.hamburger2 = false;
+                OrderScripts.instance.hamburger0 = true;
+                OrderScripts.instance.hamburger1 = false;
+
                 for (int i = OrderScripts.instance.sizeOfList; i > 0; i--)
                 {
                     foreach (var x in OrderScripts.instance.burgerMaterial)
@@ -25,13 +26,18 @@ namespace Valve.VR.InteractionSystem.Sample
                 OrderScripts.instance.üstekmek = false;
                 OrderScripts.instance.peynir = false;
                 OrderScripts.instance.domates = false;
+                OrderScripts.instance.azpismiset = false;
+                OrderScripts.instance.cokpismiset = false;
                 OrderScripts.instance.et = false;
+                OrderScripts.instance.ortapismiset = false;
+                OrderScripts.instance.yanmiset = false;
             }
 
-            if (OrderScripts.instance.altekmek && OrderScripts.instance.üstekmek && OrderScripts.instance.et && OrderScripts.instance.peynir && OrderScripts.instance.burgerMaterial[0] == OrderScripts.instance.altekmek)
+            if (OrderScripts.instance.altekmek && OrderScripts.instance.üstekmek && OrderScripts.instance.ortapismiset && OrderScripts.instance.peynir && OrderScripts.instance.burgerMaterial[0] == OrderScripts.instance.altekmek && !OrderScripts.instance.domates && !OrderScripts.instance.azpismiset && !OrderScripts.instance.cokpismiset && !OrderScripts.instance.et)
             {
-                OrderScripts.instance.hamburger1 = false;
-                OrderScripts.instance.hamburger2 = true;
+                OrderScripts.instance.hamburger0 = false;
+                OrderScripts.instance.hamburger1 = true;
+
                 for (int i = OrderScripts.instance.sizeOfList; i > 0; i--)
                 {
                     foreach (var x in OrderScripts.instance.burgerMaterial)
@@ -44,7 +50,37 @@ namespace Valve.VR.InteractionSystem.Sample
                 OrderScripts.instance.üstekmek = false;
                 OrderScripts.instance.peynir = false;
                 OrderScripts.instance.domates = false;
+                OrderScripts.instance.azpismiset = false;
+                OrderScripts.instance.cokpismiset = false;
                 OrderScripts.instance.et = false;
+                OrderScripts.instance.ortapismiset = false;
+                OrderScripts.instance.yanmiset = false;
+            }
+
+            if (OrderScripts.instance.altekmek && OrderScripts.instance.üstekmek && OrderScripts.instance.ortapismiset && OrderScripts.instance.burgerMaterial[0] == OrderScripts.instance.altekmek && !OrderScripts.instance.domates && !OrderScripts.instance.azpismiset && !OrderScripts.instance.cokpismiset && !OrderScripts.instance.et && !OrderScripts.instance.yanmiset && !OrderScripts.instance.peynir)
+            {
+                OrderScripts.instance.hamburger0 = false;
+                OrderScripts.instance.hamburger1 = false;
+                OrderScripts.instance.hamburger2 = true;
+                OrderScripts.instance.hamburger3 = false;
+
+                for (int i = OrderScripts.instance.sizeOfList; i > 0; i--)
+                {
+                    foreach (var x in OrderScripts.instance.burgerMaterial)
+                    {
+                        Destroy(x);
+                    }
+                    OrderScripts.instance.burgerMaterial.Clear();
+                }
+                OrderScripts.instance.altekmek = false;
+                OrderScripts.instance.üstekmek = false;
+                OrderScripts.instance.peynir = false;
+                OrderScripts.instance.domates = false;
+                OrderScripts.instance.azpismiset = false;
+                OrderScripts.instance.cokpismiset = false;
+                OrderScripts.instance.et = false;
+                OrderScripts.instance.ortapismiset = false;
+                OrderScripts.instance.yanmiset = false;
             }
 
             else
@@ -64,7 +100,11 @@ namespace Valve.VR.InteractionSystem.Sample
                     OrderScripts.instance.üstekmek = false;
                     OrderScripts.instance.peynir = false;
                     OrderScripts.instance.domates = false;
+                    OrderScripts.instance.azpismiset = false;
+                    OrderScripts.instance.cokpismiset = false;
                     OrderScripts.instance.et = false;
+                    OrderScripts.instance.ortapismiset = false;
+                    OrderScripts.instance.yanmiset = false;
                 }
             }
         }

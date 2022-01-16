@@ -58,7 +58,7 @@ public class AI : MonoBehaviour
         peopleSpeed = 2f;
         _agent = GetComponent<NavMeshAgent>();
         _agent.speed = peopleSpeed;
-        rndBurgerLvl1 = Random.Range(0, 2);
+        rndBurgerLvl1 = Random.Range(0, 4);
         panelText = GameObject.FindGameObjectWithTag("PeopleTalkText").GetComponent<TextMeshPro>();
     }
 
@@ -145,21 +145,32 @@ public class AI : MonoBehaviour
        {
             if (rndBurgerLvl1 == 0)
             {
-                panelText.text = "Customer Wants hamburger2";
+                panelText.text = "Orta Pismis, Sadece Domatesli Hamburger";
             }
 
             if (rndBurgerLvl1 == 1)
             {
-                panelText.text = "Customer Wants hamburger1";
+                panelText.text = "Orta Pismis, Sadece Peynirli Hamburger";
             }
 
-            if (rndBurgerLvl1 == 0 && moneyGave && OrderScripts.instance.hamburger2)
+            if (rndBurgerLvl1 == 2)
+            {
+                panelText.text = "Orta Pismis, Peynir ve Domatessiz Hamburger";
+            }
+
+            if (rndBurgerLvl1 == 3)
+            {
+                panelText.text = "Orta Pismis Karisik Hamburger";
+            }
+
+
+            if (rndBurgerLvl1 == 0 && moneyGave && OrderScripts.instance.hamburger0)
             {
                 //ClockUI.instance.talkSound1.Play();
                 Instantiate(money10, moneyAreaRef.transform.position, Quaternion.identity);
-
-
-                panelText.text = "Customer Wants Burger0";
+                canGo = true;
+                OrderScripts.instance.hamburger0 = false;
+                ClockUI.instance.trueTicketSound.Play();
                 //ClockUI.instance.writeSound.Play();
                 //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
                 moneyGave = false;
@@ -170,12 +181,14 @@ public class AI : MonoBehaviour
                 }
             }
 
+
             if (rndBurgerLvl1 == 1 && moneyGave && OrderScripts.instance.hamburger1)
             {
                 //ClockUI.instance.talkSound2.Play();
                 Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
-
-                panelText.text = "Customer Wants Burger1";
+                canGo = true;
+                OrderScripts.instance.hamburger1 = false;
+                ClockUI.instance.trueTicketSound.Play();
                 moneyGave = false;
 
                 if (!moneyGave)
@@ -186,41 +199,41 @@ public class AI : MonoBehaviour
                 }
             }
 
-            if (OrderScripts.instance.hamburger1)
+        if (rndBurgerLvl1 == 2 && moneyGave && OrderScripts.instance.hamburger2)
+        {
+            //ClockUI.instance.talkSound2.Play();
+            Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
+            canGo = true;
+            OrderScripts.instance.hamburger2 = false;
+            ClockUI.instance.trueTicketSound.Play();
+            moneyGave = false;
+
+            if (!moneyGave)
             {
-                if (rndBurgerLvl1 == 0 && !losemoney)
-                {
-                    Case.instance.MoneyAmount -= 5;
-                    losemoney = true;
-                    ClockUI.instance.wrongTicketSound.Play();
-                }
-
-                else if (rndBurgerLvl1 == 1)
-                {
-                    canGo = true;
-                    OrderScripts.instance.hamburger1 = false;
-                    ClockUI.instance.trueTicketSound.Play();
-                }
+                //ClockUI.instance.writeSound.Play();
+                //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+                return;
             }
+        }
 
-            if (OrderScripts.instance.hamburger2)
+        if (rndBurgerLvl1 == 3 && moneyGave && OrderScripts.instance.hamburger3)
+        {
+            //ClockUI.instance.talkSound2.Play();
+            Instantiate(money5, moneyAreaRef.transform.position, Quaternion.identity);
+            canGo = true;
+            OrderScripts.instance.hamburger3 = false;
+            ClockUI.instance.trueTicketSound.Play();
+            moneyGave = false;
+
+            if (!moneyGave)
             {
-                if (rndBurgerLvl1 == 0)
-                {
-                    canGo = true;
-                    OrderScripts.instance.hamburger2 = false;
-                    ClockUI.instance.trueTicketSound.Play();
-                }
-
-                else if (rndBurgerLvl1 == 1 && !losemoney)
-                {
-                    Case.instance.MoneyAmount -= 5;
-                    losemoney = true;
-                    ClockUI.instance.wrongTicketSound.Play();
-                }
+                //ClockUI.instance.writeSound.Play();
+                //ClockUI.instance.moneyPutSound.PlayDelayed(5f);
+                return;
             }
+        }
 
-       }
+    }
 
 
         private void OnDrawGizmosSelected()
