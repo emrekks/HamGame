@@ -75,7 +75,7 @@ public class BBQ : MonoBehaviour
         }
     }
 
-    void OnCollisionStay(Collision other)
+    void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Et") && !doOnce)
         {

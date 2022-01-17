@@ -23,6 +23,7 @@ public class OrderScripts : MonoBehaviour
     public GameObject AzPismisEt;
     public GameObject OrtaPismisEt; 
     public GameObject CokPismisEt;
+    public GameObject YanmisEt;
     public GameObject Marul;
     public GameObject Sogan;
     public List<GameObject> burgerMaterial = new List<GameObject>();
@@ -58,6 +59,8 @@ public class OrderScripts : MonoBehaviour
     public bool yanmiset = false;
     public bool marul = false;
     public bool sogan = false;
+   
+
     // Start is called before the first frame update
     void Start()
     {
@@ -149,6 +152,13 @@ public class OrderScripts : MonoBehaviour
             Destroy(other.gameObject);
             makeChild = Instantiate(Sogan, Referans.position + new Vector3(0, 0.15f, 0), Quaternion.identity);
             sogan = true;
+            burgerMaterial.Add(makeChild);
+        }
+        if (other.gameObject.CompareTag("YanmisEt") && !üstekmek && !yanmiset)
+        {
+            Destroy(other.gameObject);
+            makeChild = Instantiate(YanmisEt, Referans.position + new Vector3(0, 0.15f, 0), Quaternion.identity);
+            yanmiset = true;
             burgerMaterial.Add(makeChild);
         }
     }

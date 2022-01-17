@@ -156,7 +156,7 @@ public class AI : MonoBehaviour
        {
             if (rndBurgerLvl1 == 0)
             {
-                panelText.text = "Orta Pismis, Sadece Domatesli Hamburger";
+                panelText.text = "Orta Pismis, Domates";
             }
 
             if (rndBurgerLvl1 == 1)
@@ -166,7 +166,7 @@ public class AI : MonoBehaviour
 
             if (rndBurgerLvl1 == 2)
             {
-                panelText.text = "Orta Pismis, Peynir ve Domatessiz Hamburger";
+                panelText.text = "Orta Pismis, Marul Domates Hamburger";
             }
 
             if (rndBurgerLvl1 == 3)
@@ -179,11 +179,11 @@ public class AI : MonoBehaviour
             }
             if (rndBurgerLvl1 == 5)
             {
-                panelText.text = "Az Pismis, Peynir ve Domatessiz Hamburger";
+                panelText.text = "Az Pismis, Peynir Soğan Hamburger";
             }
             if (rndBurgerLvl1 == 6)
             {
-                panelText.text = "Az Pismis, Sadece Domatesli Hamburger";
+                panelText.text = "Az Pismis, Soğanlı Domatesli Hamburger";
             }
 
             if (rndBurgerLvl1 == 7)
@@ -196,16 +196,16 @@ public class AI : MonoBehaviour
             }
             if (rndBurgerLvl1 == 9)
             {
-                panelText.text = "Cok Pismis, Peynir ve Domatessiz Hamburger";
+                panelText.text = "Cok Pismis, Marul ve soğanlı Hamburger";
             }
             if (rndBurgerLvl1 == 10)
             {
-                panelText.text = "Cok Pismis, Sadece Domatesli Hamburger";
+                panelText.text = "Cok Pismis, Domates Soğan Marul Hamburger";
             }
 
             if (rndBurgerLvl1 == 11)
             {
-                panelText.text = "Cok Pismis, Sadece Peynirli Hamburger";
+                panelText.text = "Cok Pismis, Peynir ve Marullu Hamburger";
             }
 
 
