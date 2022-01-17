@@ -33,6 +33,8 @@ TagManager:
   - CokPismisEt
   - YanmisEt
   - OrtaPismisEt
+  - Sogan
+  - Marul
   layers:
   - Default
   - TransparentFX

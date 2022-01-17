@@ -34,6 +34,16 @@ namespace Valve.VR.InteractionSystem.Sample
             {
                 Instantiate(materials[4], new Vector3(8.6f, 3.285f, 3.369f), Quaternion.Euler(0f, 0f, 0f));
             }
+
+            if (SpawnObject == 6)
+            {
+                Instantiate(materials[5], new Vector3(8.6f, 3.285f, 3.948f), Quaternion.Euler(0f, 0f, 0f));
+            }
+
+            if (SpawnObject == 7)
+            {
+                Instantiate(materials[6], new Vector3(8.6f, 3.285f, 0.2443507f), Quaternion.Euler(0f, 0f, 0f));
+            }
         }
 
         public void OnButtonUp()
