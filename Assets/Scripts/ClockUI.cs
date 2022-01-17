@@ -160,7 +160,7 @@ public class ClockUI : MonoBehaviour
     
     public void GamePause()
     {
-        buttonClickSound.Play();
+        //buttonClickSound.Play();
         
         if (!gamePaused)
         {

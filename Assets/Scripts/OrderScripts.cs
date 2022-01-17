@@ -68,7 +68,6 @@ public class OrderScripts : MonoBehaviour
     void Update()
     {
         sizeOfList = burgerMaterial.Count;
-        Debug.Log(hamburger0);
     }
 
     void OnTriggerEnter(Collider other)
