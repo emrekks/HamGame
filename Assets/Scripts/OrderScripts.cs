@@ -21,11 +21,15 @@ public class OrderScripts : MonoBehaviour
     public GameObject Et;
     public GameObject Peynir;
     public GameObject AzPismisEt;
-    public GameObject OrtaPismisEt; 
+    public GameObject OrtaPismisEt;
     public GameObject CokPismisEt;
     public GameObject YanmisEt;
     public GameObject Marul;
     public GameObject Sogan;
+    public GameObject VisneliSoda;
+    public GameObject KarpuzluGazoz;
+    public GameObject Cola;
+    public GameObject UzumluSoda;
     public List<GameObject> burgerMaterial = new List<GameObject>();
     public Transform Referans;
     private GameObject makeChild;
@@ -59,7 +63,11 @@ public class OrderScripts : MonoBehaviour
     public bool yanmiset = false;
     public bool marul = false;
     public bool sogan = false;
-   
+    public bool cola = false;
+    public bool uzumlusoda = false;
+    public bool visnelisoda = false;
+    public bool karpuzlugazoz = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -159,6 +167,34 @@ public class OrderScripts : MonoBehaviour
             Destroy(other.gameObject);
             makeChild = Instantiate(YanmisEt, Referans.position + new Vector3(0, 0.15f, 0), Quaternion.identity);
             yanmiset = true;
+            burgerMaterial.Add(makeChild);
+        }
+        if (other.gameObject.CompareTag("VisneliSoda")&& !visnelisoda)
+        {
+            Destroy(other.gameObject);
+            makeChild = Instantiate(VisneliSoda, Referans.position + new Vector3(0, -0.10f, 0), Quaternion.identity);
+            visnelisoda = true;
+            burgerMaterial.Add(makeChild);
+        }
+        if (other.gameObject.CompareTag("KarpuzluGazoz")&& !karpuzlugazoz)
+        {
+            Destroy(other.gameObject);
+            makeChild = Instantiate(KarpuzluGazoz, Referans.position + new Vector3(0, -0.10f, 0), Quaternion.identity);
+            karpuzlugazoz = true;
+            burgerMaterial.Add(makeChild);
+        }
+        if (other.gameObject.CompareTag("Cola") && !cola)
+        {
+            Destroy(other.gameObject);
+            makeChild = Instantiate(Cola, Referans.position + new Vector3(0, -0.10f, 0), Quaternion.identity);
+            cola = true;
+            burgerMaterial.Add(makeChild);
+        }
+        if (other.gameObject.CompareTag("UzumluSoda") && !uzumlusoda)
+        {
+            Destroy(other.gameObject);
+            makeChild = Instantiate(UzumluSoda, Referans.position + new Vector3(0, -0.10f, 0), Quaternion.identity);
+            uzumlusoda = true;
             burgerMaterial.Add(makeChild);
         }
     }

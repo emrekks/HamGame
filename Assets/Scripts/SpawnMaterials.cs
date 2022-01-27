@@ -68,7 +68,7 @@ namespace Valve.VR.InteractionSystem.Sample
 
         public void OnButtonUp()
         {
-            ColorSelf(Color.white);
+            
         }
 
         private void ColorSelf(Color newColor)
