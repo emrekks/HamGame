@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 06cb73e6295a9b245966f411017c9f7b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Cute Notes
+  fontNames:
+  - Cute Notes
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: f017bae9948fed14385564778858ba99, type: 3}
+  - {fileID: 12800000, guid: f40cce2c756bed84bb0b0debeea84ec4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
