@@ -10165,7 +10165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clockText: {fileID: 2021044972}
   replayText: {fileID: 483937704}
-  replayTimer: 0
+  replayTimer: 1
   replayBool: 0
   writeSound: {fileID: 0}
   loseSound: {fileID: 0}
