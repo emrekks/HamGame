@@ -77,6 +77,7 @@ public class BBQ : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        ClockUI.instance.etpismesesi.Play();
         if (other.gameObject.CompareTag("Et") && !doOnce)
         {
             timer = 0;
@@ -87,6 +88,7 @@ public class BBQ : MonoBehaviour
 
         if (other.gameObject.CompareTag("AzPismisEt") && !doOnce)
         {
+            ClockUI.instance.etpisti.Play();
             timer = 5;
             etCooking2 = true;
             Hamburger = other.gameObject;
@@ -95,6 +97,7 @@ public class BBQ : MonoBehaviour
 
         if (other.gameObject.CompareTag("OrtaPismisEt") && !doOnce)
         {
+            ClockUI.instance.etpisti.Play();
             timer = 10;
             etCooking3 = true;
             Hamburger = other.gameObject;
@@ -103,10 +106,16 @@ public class BBQ : MonoBehaviour
 
         if (other.gameObject.CompareTag("CokPismisEt") && !doOnce)
         {
+            ClockUI.instance.etpisti.Play();
             timer = 15;
             etCooking4 = true;
             Hamburger = other.gameObject;
             doOnce = true;
+        }
+        if (other.gameObject.CompareTag("YanmisEt"))
+        {
+            ClockUI.instance.etpisti.Play();  
+            
         }
     }
 

@@ -8,6 +8,7 @@ namespace Valve.VR.InteractionSystem.Sample
     {
         public void OnButtonDown()
         {
+            ClockUI.instance.zilsound.Play();
             ColorSelf(Color.green);
             if (OrderScripts.instance.altekmek && OrderScripts.instance.üstekmek && OrderScripts.instance.ortapismiset && OrderScripts.instance.domates && OrderScripts.instance.burgerMaterial[0] == OrderScripts.instance.altekmek && !OrderScripts.instance.peynir && !OrderScripts.instance.azpismiset && !OrderScripts.instance.cokpismiset && !OrderScripts.instance.et && !OrderScripts.instance.marul && !OrderScripts.instance.sogan)
             {

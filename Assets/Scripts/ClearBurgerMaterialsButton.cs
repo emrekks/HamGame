@@ -8,6 +8,7 @@ namespace Valve.VR.InteractionSystem.Sample
     {
         public void OnButtonDown()
         {
+            ClockUI.instance.zilsound.Play();
             for (int i = OrderScripts.instance.sizeOfList; i > 0; i--)
             {
                 foreach (var x in OrderScripts.instance.burgerMaterial)

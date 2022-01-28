@@ -31,6 +31,12 @@ public class ClockUI : MonoBehaviour
     public AudioSource talkSound2;
     public AudioSource buttonClickSound;
     public AudioSource ticketCutSound;
+    public AudioSource zilsound;
+    public AudioSource tepsi;
+    public AudioSource etpismesesi;
+    public AudioSource etpisti;
+    public AudioSource pause;
+    public AudioSource otomat;
     
     public int time = 9;
     public int time2 = 0;
@@ -160,7 +166,7 @@ public class ClockUI : MonoBehaviour
     
     public void GamePause()
     {
-        //buttonClickSound.Play();
+        pause.Play();
         
         if (!gamePaused)
         {

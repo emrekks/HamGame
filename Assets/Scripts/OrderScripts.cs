@@ -83,6 +83,7 @@ public class OrderScripts : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        ClockUI.instance.tepsi.Play();
         if (other.gameObject.CompareTag("AltEkmek") && !altekmek)
         {
             Destroy(other.gameObject);

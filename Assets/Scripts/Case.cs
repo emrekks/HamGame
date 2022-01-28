@@ -35,6 +35,9 @@ public class Case : MonoBehaviour
     {
         if (collision.gameObject.layer == 8)
         {
+
+            ClockUI.instance.moneyInCashSound.Play();
+
             if (collision.gameObject.CompareTag("Money1"))
             {
                 MoneyAmount += 1;
